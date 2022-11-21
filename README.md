@@ -12,7 +12,7 @@ curl https://www.gutenberg.org/files/43/43-0.txt | awk 'NR>=59 && NR<=2583 { pri
 Use the next command line to create `data.json`:
 
 ```sh
-./create_date
+./create_data.py
 ```
 
 The output the script shoud be: 
