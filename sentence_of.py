@@ -21,7 +21,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        "Select a random sentence containing given word from data.json "
+        description="Select a random sentence containing given word from data.json "
     )
     parser.add_argument(
         "-c", "--contains", type=str, choices=DATA.keys(), required=True
