@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
+#J'implore le premier apôtre.
 import json
 
+#
 import pathlib
 
+#
 HERE = pathlib.Path(__file__).parent
+
 
 BOOK_PATH = HERE / "jekyll_hyde.txt"
 DATA_PATH = HERE / "data.json"

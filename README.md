@@ -3,11 +3,13 @@
 
 ## Quick setup for a given Gutenberg project
 
-Retrieve the text from `https://www.gutenberg.org` and select only desired lines. 
+Retrieve the text from `https://www.gutenberg.org/` and select only desired lines. 
 
 ```sh
 curl https://www.gutenberg.org/files/43/43-0.txt | awk 'NR>=59 && NR<=2583 { print }' > jekyll_hyde.txt
 ```
+
+For a more peculiar use : change terms in `./create_data.py` : in jekyll_hyde branch, importants terms are "jekyll" and "hyde"; in jekyll_hyde branch, importants terms are "jekyll" and "hyde"; etc.
 
 Use the next command line to create `data.json`:
 
