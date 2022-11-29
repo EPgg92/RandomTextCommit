@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
-#J'implore le premier apôtre.
+#Oh Romeo, Romeo, what does it take to reach you ? 
 import json
 
-#
+#Oh Juliet, Juliet, what do I need to climb at you ? 
 import pathlib
 
-#
+#Here we will be united
 HERE = pathlib.Path(__file__).parent
 
-
+#and the data.json will be our love contract
 BOOK_PATH = HERE / "romeo_juliet.txt"
 DATA_PATH = HERE / "data.json"
 
