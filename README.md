@@ -1,5 +1,4 @@
-# RandomLiteraryExtract
-
+# RandomTextCommit Jekyll & Hyde
 
 ## Quick setup for a given Gutenberg project
 
