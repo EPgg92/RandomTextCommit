@@ -1,15 +1,12 @@
 # RandomLiteraryExtract
+# RandomLiteraryExtract
 
 
 ## Quick setup for a given Gutenberg project
 
-Retrieve the text from `https://www.gutenberg.org/` and select only desired lines. 
+Retrieve the text from `https://ws-export.wmcloud.org/?lang=fr&title=Le_Miroir_de_l’âme_pécheresse.txt` and export the text in .txt format with the name "miroir_pecheresse" and save the file in the repo. 
 
-```sh
-curl https://www.gutenberg.org/files/43/43-0.txt | awk 'NR>=59 && NR<=2583 { print }' > jekyll_hyde.txt
-```
-
-For a more peculiar use : change terms in `./create_data.py` : in jekyll_hyde branch, importants terms are "jekyll" and "hyde"; in jekyll_hyde branch, importants terms are "jekyll" and "hyde"; etc.
+Your now have a file "miroir_pecheresse" at the root.
 
 Use the next command line to create `data.json`:
 
@@ -20,12 +17,12 @@ Use the next command line to create `data.json`:
 The output the script shoud be: 
 
 ```txt
-Number of sentence               1375
-Number of jekyll sentences               91
-Number of hyde sentence          91
-Number of both sentence          19
-Number of jekyll uniq sentences          72
-Number of hyde uniq sentence             72
+Number of sentence               698
+Number of femme sentences                7
+Number of dieu sentence          67
+Number of both sentence          1
+Number of femme uniq sentences           6
+Number of dieu uniq sentence             66
 ```
 
 
@@ -34,13 +31,13 @@ Number of hyde uniq sentence             72
 ### SentenceOf script
 
 ```txt
-usage: sentence_of.py [-h] -c {both,jekyll,hyde}
+usage: sentence_of.py [-h] -c {both,femme,dieu}
 
 Select a random sentence containing given word from data.json
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c {both,jekyll,hyde}, --contains {both,jekyll,hyde}
+  -c {both,femme,dieu}, --contains {both,femme,dieu}
 ```
 
 ### To use as commit messager writer
@@ -51,9 +48,9 @@ optional arguments:
 https://github.com/EPgg92/RandomLiteraryExtract
 cd RandomLiteraryExtract
 echo """
-alias cjekyll='git commit -m \"\$($PWD/sentence_of.py -c jekyll)\"' 
-alias chyde='git commit -m \"\$($PWD/sentence_of.py -c hyde)\"' 
-alias cjekyllhyde='git commit -m \"\$($PWD/sentence_of.py -c both)\"' 
+alias cfemme='git commit -m \"\$($PWD/sentence_of.py -c femme)\"' 
+alias cdieu='git commit -m \"\$($PWD/sentence_of.py -c dieu)\"' 
+alias cfemmedieu='git commit -m \"\$($PWD/sentence_of.py -c both)\"' 
 """ >> $HOME/.zshrc
 source $HOME/.zshrc
 ```
@@ -66,4 +63,4 @@ First add your changes:
 git add my_files_changed.txt
 ```
 
-Then just used `cjekyll` or `chyde` or `cjekyllhyde`
+Then just used `cfemme` or `cdieu` or `cfemmedieu`
