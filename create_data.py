@@ -10,7 +10,7 @@ import pathlib
 HERE = pathlib.Path(__file__).parent
 
 
-BOOK_PATH = HERE / "jekyll_hyde.txt"
+BOOK_PATH = HERE / "romeo_juliet.txt"
 DATA_PATH = HERE / "data.json"
 
 STOP_PONCTUATION = ".!?"
@@ -34,25 +34,25 @@ while text:
 
 print("Number of sentence\t\t", len(sentences))
 
-jekyll_sentences = set(
-    [sentence for sentence in sentences if "jekyll" in sentence.lower()]
+romeo_sentences = set(
+    [sentence for sentence in sentences if "romeo" in sentence.lower()]
 )
-hyde_sentences = set([sentence for sentence in sentences if "hyde" in sentence.lower()])
+juliet_sentences = set([sentence for sentence in sentences if "juliet" in sentence.lower()])
 
-print("Number of jekyll sentences\t\t", len(jekyll_sentences))
-print("Number of hyde sentence\t\t", len(hyde_sentences))
-intersection = set(jekyll_sentences).intersection(set(hyde_sentences))
+print("Number of romeo sentences\t\t", len(romeo_sentences))
+print("Number of juliet sentence\t\t", len(juliet_sentences))
+intersection = set(romeo_sentences).intersection(set(juliet_sentences))
 print("Number of both sentence\t\t", len(intersection))
 
-jekyll_sentences.difference_update(intersection)
-hyde_sentences.difference_update(intersection)
-print("Number of jekyll uniq sentences\t\t", len(jekyll_sentences))
-print("Number of hyde uniq sentence\t\t", len(hyde_sentences))
+romeo_sentences.difference_update(intersection)
+juliet_sentences.difference_update(intersection)
+print("Number of romeo uniq sentences\t\t", len(romeo_sentences))
+print("Number of juliet uniq sentence\t\t", len(juliet_sentences))
 
 data = {
     "both": list(intersection),
-    "jekyll": list(jekyll_sentences),
-    "hyde": list(hyde_sentences),
+    "romeo": list(romeo_sentences),
+    "juliet": list(juliet_sentences),
 }
 
 

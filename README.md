@@ -6,10 +6,10 @@
 Retrieve the text from `https://www.gutenberg.org/` and select only desired lines. 
 
 ```sh
-curl https://www.gutenberg.org/files/43/43-0.txt | awk 'NR>=59 && NR<=2583 { print }' > jekyll_hyde.txt
+curl https://www.gutenberg.org/cache/epub/1777/pg1777.txt | awk 'NR>=59 && NR<=2583 { print }' > romeo_juliet.txt
 ```
 
-For a more peculiar use : change terms in `./create_data.py` : in jekyll_hyde branch, importants terms are "jekyll" and "hyde"; in jekyll_hyde branch, importants terms are "jekyll" and "hyde"; etc.
+For a more peculiar use : change terms in `./create_data.py` : in romeo_juliet branch, importants terms are "romeo" and "juliet"; in jekyll_hyde branch, importants terms are "jekyll" and "hyde"; etc.
 
 Use the next command line to create `data.json`:
 
@@ -20,12 +20,12 @@ Use the next command line to create `data.json`:
 The output the script shoud be: 
 
 ```txt
-Number of sentence               1375
-Number of jekyll sentences               91
-Number of hyde sentence          91
-Number of both sentence          19
-Number of jekyll uniq sentences          72
-Number of hyde uniq sentence             72
+Number of sentence               2192
+Number of romeo sentences                99
+Number of juliet sentence                30
+Number of both sentence          4
+Number of romeo uniq sentences           95
+Number of juliet uniq sentence           26
 ```
 
 
@@ -34,13 +34,13 @@ Number of hyde uniq sentence             72
 ### SentenceOf script
 
 ```txt
-usage: sentence_of.py [-h] -c {both,jekyll,hyde}
+usage: sentence_of.py [-h] -c {both,romeo,juliet}
 
 Select a random sentence containing given word from data.json
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c {both,jekyll,hyde}, --contains {both,jekyll,hyde}
+  -c {both,romeo,juliet}, --contains {both,romeo,juliet}
 ```
 
 ### To use as commit messager writer
@@ -51,9 +51,9 @@ optional arguments:
 https://github.com/EPgg92/RandomLiteraryExtract
 cd RandomLiteraryExtract
 echo """
-alias cjekyll='git commit -m \"\$($PWD/sentence_of.py -c jekyll)\"' 
-alias chyde='git commit -m \"\$($PWD/sentence_of.py -c hyde)\"' 
-alias cjekyllhyde='git commit -m \"\$($PWD/sentence_of.py -c both)\"' 
+alias cromeo='git commit -m \"\$($PWD/sentence_of.py -c romeo)\"' 
+alias cjuliet='git commit -m \"\$($PWD/sentence_of.py -c juliet)\"' 
+alias cromeojuliet='git commit -m \"\$($PWD/sentence_of.py -c both)\"' 
 """ >> $HOME/.zshrc
 source $HOME/.zshrc
 ```
@@ -66,4 +66,4 @@ First add your changes:
 git add my_files_changed.txt
 ```
 
-Then just used `cjekyll` or `chyde` or `cjekyllhyde`
+Then just used `cromeo` or `cjuliet` or `cromeojuliet`
